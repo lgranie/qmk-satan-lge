@@ -1,13 +1,133 @@
 #include QMK_KEYBOARD_H
 
+
 enum {
   TD_LSFT_CAPS = 0,
-  TD_RSFT_CAPS = 1
+  TD_RSFT_CAPS = 1,
+  TD_A  = 2,
+  TD_E  = 3,
+  TD_I  = 4,
+  TD_O  = 5,
+  TD_U  = 6
 };
+
+void dance_e_accent (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+    register_code (KC_NLCK);
+    unregister_code (KC_NLCK);
+    register_code (KC_LALT);
+    register_code (KC_P0);
+    unregister_code (KC_P0);
+    register_code (KC_P2);
+    unregister_code (KC_P2);
+    register_code (KC_P3);
+    unregister_code (KC_P3);
+    register_code (KC_P2);
+    unregister_code (KC_P2);
+    unregister_code (KC_LALT);
+    register_code (KC_NLCK);
+    unregister_code (KC_NLCK);
+  }
+  else {
+    register_code (KC_E);
+    unregister_code (KC_E);
+  }
+}
+void dance_a_accent (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+    register_code (KC_NLCK);
+    unregister_code (KC_NLCK);
+    register_code (KC_LALT);
+    register_code (KC_P1);
+    unregister_code (KC_P1);
+    register_code (KC_P3);
+    unregister_code (KC_P3);
+    register_code (KC_P3);
+    unregister_code (KC_P3);
+    unregister_code (KC_LALT);
+    register_code (KC_NLCK);
+    unregister_code (KC_NLCK);
+  }
+  else {
+    register_code (KC_A);
+    unregister_code (KC_A);
+  }
+}
+void dance_i_accent (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+    register_code (KC_NLCK);
+    unregister_code (KC_NLCK);
+    register_code (KC_LALT);
+    register_code (KC_P0);
+    unregister_code (KC_P0);
+    register_code (KC_P2);
+    unregister_code (KC_P2);
+    register_code (KC_P3);
+    unregister_code (KC_P3);
+    register_code (KC_P6);
+    unregister_code (KC_P6);
+    unregister_code (KC_LALT);
+    register_code (KC_NLCK);
+    unregister_code (KC_NLCK);
+  }
+  else {
+    register_code (KC_I);
+    unregister_code (KC_I);
+  }
+}
+void dance_o_accent (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+    register_code (KC_NLCK);
+    unregister_code (KC_NLCK);
+    register_code (KC_LALT);
+    register_code (KC_P0);
+    unregister_code (KC_P0);
+    register_code (KC_P2);
+    unregister_code (KC_P2);
+    register_code (KC_P4);
+    unregister_code (KC_P4);
+    register_code (KC_P2);
+    unregister_code (KC_P2);
+    unregister_code (KC_LALT);
+    register_code (KC_NLCK);
+    unregister_code (KC_NLCK);
+  }
+  else {
+    register_code (KC_O);
+    unregister_code (KC_O);
+  }
+}
+void dance_u_accent (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+    register_code (KC_NLCK);
+    unregister_code (KC_NLCK);
+    register_code (KC_LALT);
+    register_code (KC_P0);
+    unregister_code (KC_P0);
+    register_code (KC_P2);
+    unregister_code (KC_P2);
+    register_code (KC_P4);
+    unregister_code (KC_P4);
+    register_code (KC_P9);
+    unregister_code (KC_P9);
+    unregister_code (KC_LALT);
+    register_code (KC_NLCK);
+    unregister_code (KC_NLCK);
+  }
+  else {
+    register_code (KC_U);
+    unregister_code (KC_U);
+  }
+}
 
 qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_LSFT_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
   [TD_RSFT_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_RSFT, KC_CAPS)
+  [TD_A] = ACTION_TAP_DANCE_FN(dance_a_accent),
+  [TD_E] = ACTION_TAP_DANCE_FN(dance_e_accent),
+  [TD_I] = ACTION_TAP_DANCE_FN(dance_i_accent),
+  [TD_O] = ACTION_TAP_DANCE_FN(dance_o_accent),
+  [TD_U] = ACTION_TAP_DANCE_FN(dance_u_accent)
 };
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
