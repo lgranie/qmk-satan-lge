@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------------------------------------------------------|
    * | Shift  | Z | X | C | V | B | N | M | , | . | / |    Shift |
    * |-----------------------------------------------------------|
-   * |Ctrl|GUI |Alt|         Space        |AltGr| GUI|   Fn| Ctrl|
+   * |Ctrl|GUI |Alt|      Space Fn        |AltGr| GUI|   Fn| Ctrl|
    * `-----------------------------------------------------------'
    */
   [_BL] = LAYOUT_60_ansi(
