@@ -1,6 +1,6 @@
 # Installation
 
-git clone https://github.com/qmk/qmk-firmware.git
+git clone https://github.com/qmk/qmk_firmware.git
 
 cd qmk-firmware
 
