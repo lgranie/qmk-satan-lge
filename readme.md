@@ -8,5 +8,5 @@ git submodule add https://github.com/lgranie/qmk-satan-lge.git keyboards/satan/k
 
 # Build
 
-sudo make satan:lge:dfu
+sudo make gh60/satan:lge:dfu
 
