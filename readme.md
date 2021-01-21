@@ -4,7 +4,7 @@ git clone https://github.com/qmk/qmk_firmware.git
 
 cd qmk-firmware
 
-git submodule add https://github.com/lgranie/qmk-satan-lge.git keyboards/satan/keymaps/lge
+git submodule add https://github.com/lgranie/qmk-satan-lge.git keyboards/gh60/satan/keymaps/lge
 
 # Build
 
